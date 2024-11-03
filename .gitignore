@@ -1,0 +1,33 @@
+# Ignore virtual environment folder
+env/
+venv/
+*.pyc
+__pycache__/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore PyQt build and cache files
+*.qrc
+*.pyqt5
+*.pyqt6
+*.pyc
+
+# Ignore IDE/editor files
+.idea/
+.vscode/
+
+# Ignore Python cache files
+*.egg-info/
+*.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Ignore log files
+*.log
+
+# Ignore byte-compiled files
+*.pyo
+*.pyd
+*.pdb
