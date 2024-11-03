@@ -9,8 +9,10 @@ import sys
 class MyWindow(QMainWindow):
     def __init__(self) :
         super().__init__()
-        self.menuBar().addMenu('file')
-        self.statusBar().showMessage('Hello')
+        self.setMaximumSize(500,500)
+        self.setMinimumSize(100,100)
+        self.setWindowOpacity(0.5)
+        self.setWindowTitle('Fatemeh')
 
 app=QApplication(sys.argv)
 window= MyWindow()
