@@ -9,8 +9,8 @@ import sys
 class MyWindow(QMainWindow):
     def __init__(self) :
         super().__init__()
-
-
+        self.menuBar().addMenu('file')
+        self.statusBar().showMessage('Hello')
 
 app=QApplication(sys.argv)
 window= MyWindow()
