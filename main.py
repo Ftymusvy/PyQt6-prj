@@ -1,10 +1,18 @@
 
-from PyQt6.QtWidgets import QApplication , QWidget,QMainWindow
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication , QWidget, QMainWindow
 import sys
 #QMainWndow
 #QWidget
 #QDialog
+
+class MyWindow(QMainWindow):
+    def __init__(self) :
+        super().__init__()
+
+
+
 app=QApplication(sys.argv)
-window= QWidget()
+window= MyWindow()
 window.show()
 sys.exit(app.exec())
