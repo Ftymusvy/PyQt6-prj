@@ -1,6 +1,6 @@
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication , QWidget, QMainWindow, QLabel ,QPushButton, QMenu
+from PyQt6.QtWidgets import QApplication , QWidget, QMainWindow, QLabel ,QPushButton, QMenu,QLineEdit, QHBoxLayout
 import sys
 from PyQt6.QtGui import QFont , QIcon ,QPixmap 
 #QMainWndow
@@ -24,16 +24,21 @@ class MyWindow(QMainWindow):
         self.button.setGeometry(200, 10, 100, 50)
         self.button.setFont(QFont('Aria', 5))
         self.button.setIcon(QIcon('logo.png'))
-
-        menue = QMenu()
-        menue.addAction('copy')
-        menue.addAction('paste')
-        menue.addAction('out')
-        self.button.setFont(QFont('Aria', 5))
-        menue.setStyleSheet("background-color:red")
-        self.button.setMenu(menue)
+        
+        self.create_qline_edit()
+        self.clicked()
 
 
+    def create_qline_edit(self):
+        self.input_text= QLineEdit(self)
+        self.input_text.setPlaceholderText('enter your name')
+        self.input_text.setText("default")
+        self.input_text.setStyleSheet('color:blue')
+        self.input_text.setEchoMode(QLineEdit.EchoMode.Password)
+    def clicked(self):
+        if self.input_text.text():
+            self.label.setText(self.input_text.text())
+            self.input_text.clear()
 
 
 app=QApplication(sys.argv)
